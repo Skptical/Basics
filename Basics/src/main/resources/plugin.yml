@@ -1,0 +1,169 @@
+name: Basics
+version: '${project.version}'
+main: dev.skptical.basics.Basics
+api-version: 1.19
+loadbefore:
+  - SMP
+load: STARTUP
+softdepend: [ Vault, PlaceholderAPI ]
+authors: [ Skptical ]
+description: A light-weight remake of the Essentials plugin.
+permissions:
+  basics.*:
+    description: Gives access to all features within the plugin.
+    children:
+      - basics.gamemode.*
+      - basics.alerts.*
+      - basics.reload
+      - basics.resetconfig
+      - basics.smite.*
+      - basics.commandspy
+      - basics.whois
+      - basics.msg
+
+  basics.whois:
+    description: Allows the player to use the /whois command to see other player information.
+
+  basics.smite.*:
+    description: Allows player full access to the /smite command and its features.
+    children:
+      - basics.smite
+      - basics.smite.others
+
+  basics.smite:
+    description: Allows the player to use the /smite command.
+
+  basics.smite.others:
+    description: Allows the player to use the /smite command on other players. (They also need basics.smite in order to use the command this just lets them execute it on other players)
+
+  basics.reload:
+    description: Allows the player to reload the plugin.
+
+  basics.gamemode.*:
+    description: Gives access to all gamemode commands and permissions.
+    children:
+      - basics.gamemode.creative
+      - basics.gamemode.survival
+      - basics.gamemode.adventure
+      - basics.gamemode.spectator
+      - basics.gamemode.other
+
+  basics.gamemode.creative:
+    description: Allows the user access to creative mode with /gamemode.
+
+  basics.gamemode.survival:
+    description: Allows the user access to survival mode with /gamemode.
+
+  basics.gamemode.adventure:
+    description: Allows the user access to adventure mode with /gamemode.
+
+  basics.gamemode.spectator:
+    description: Allows the user access to spectator mode with /gamemode.
+
+  basics.gamemode.other:
+    description: Allows the user to change the gamemode of another player.
+
+  basics.alerts.*:
+    description: Allows the player to see all staff alerts from the plugin.
+    children:
+      - basics.alerts.deniedpermission
+      - basics.notify
+
+  basics.alerts.deniedpermission:
+    description: Lets the player see when other players attempt to use commands they don't have permissions for.
+
+  basics.notify:
+    description: Lets the player see staff alerts.
+
+  basics.resetconfig:
+    description: Lets the player use /basics reloadconfig
+
+  basics.commandspy:
+    description: Allows access to the command spy feature.
+
+  basics.msg:
+    description: Allows the player to use /msg.
+
+
+
+commands:
+
+  nv:
+    description: remember to remove this command and code
+
+  basics:
+    description: Allows the user to reload the plugin.
+    usage: /basics <reload>
+
+  smite:
+    description: Summon lightning at a location or another player.
+    usage: /smite <player>
+    aliases:
+      - lightning
+      - shock
+      - thor
+
+  gamemode:
+    description: Allows the user to change theirs and others gamemodes.
+    usage: /gamemode [gamemode] <player>
+    aliases:
+      - gm
+  gmc:
+    description: Allows the user to access creative mode.
+    usage: /gamemode <player>
+    aliases:
+      - creativemode
+      - creative
+      - gm1
+      - gmc
+  gms:
+    description: Allows the user to access survival mode.
+    usage: /gms <player>
+    aliases:
+      - suvivalmode
+      - survival
+      - gms
+      - gm0
+  gma:
+    description: Allows the user to access adventure mode.
+    usage: /gma <player>
+    aliases:
+      - adventuremode
+      - adventure
+      - gma
+      - gm2
+  gmsp:
+    description: Allows the user to access spectator mode.
+    usage: /gmsp <player>
+    aliases:
+      - spec
+      - spectator
+      - gmsp
+      - gm3
+  cmdspy:
+    description: Allows the player to see other players executed commands
+    usage: /cmdspy <toggle>
+    aliases:
+      - commandspy
+  whois:
+    description: Allows the player to see information about other players.
+    usage: /whois [player]
+    aliases:
+      - pinfo
+      - playerinfo
+  message:
+    description: Privately message another player.
+    usage: /message [player] [message]
+    aliases:
+      - msg
+      - w
+      - t
+      - m
+      - tell
+      - whisper
+      - pm
+  r:
+    description: reply to the last player you messaged.
+    usage: /r [message]
+    aliases:
+      - reply
