@@ -83,8 +83,12 @@ public class Message implements CommandExecutor, TabExecutor {
                                         p.sendMessage(Config.pmDisabledOtherMessage);
                                         return true;
                                     }
-                                    for(Player player : socialSpy){
-                                        player.sendMessage(); //TODO: SOCIAL SPY
+                                    for(Player player : Message.socialSpy){
+                                        if(!player.getUniqueId().equals(p.getUniqueId())){
+                                            player.sendMessage(Config.socialSpyMessage.replaceAll("%player%",p.getName()).replaceAll("%target%", target.getName())
+                                                    .replaceAll("%message%", message));
+                                        }
+
                                     }
 
                                     p.sendMessage(Config.messageSent.replaceAll("%message%", message).replaceAll("%target%", target.getName()));
@@ -144,8 +148,12 @@ public class Message implements CommandExecutor, TabExecutor {
                         p.sendMessage(Config.pmDisabledOtherMessage);
                         return true;
                     }
-                    for(Player player : socialSpy){
-                        player.sendMessage(); //TODO: SOCIAL SPY
+                    for(Player player : Message.socialSpy){
+                        if(!player.getUniqueId().equals(p.getUniqueId())){
+                            player.sendMessage(Config.socialSpyMessage.replaceAll("%player%",p.getName()).replaceAll("%target%", target.getName())
+                                    .replaceAll("%message%", message));
+                        }
+
                     }
 
                     p.sendMessage(Config.messageSent.replaceAll("%message%", message).replaceAll("%target%", Util.getPlayer(args[0]).getName()));
