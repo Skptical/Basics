@@ -13,6 +13,11 @@ public class PlayerCommandExecuteHandler implements Listener {
 
     @EventHandler
     public void playerCommandEvent(PlayerCommandPreprocessEvent e){
+
+        if(CommandSpy.toggledCmdPlayers.isEmpty()) return; // If there is no players in the registry then cancel
+
+
+
         for(Player p: Bukkit.getOnlinePlayers()){
             if(CommandSpy.toggledCmdPlayers.contains(p)){
                 if(Config.commandSpyShowOwn){

@@ -165,7 +165,7 @@ public class Message implements CommandExecutor, TabExecutor {
 
         return true;
     }
-    // TODO: add other util stuff (Checking for online players and shit that is repeated (Clean up code essentially ))
+    //TODO: add other util stuff (Checking for onlin\e players and shit that is repeated (Clean up code essentially ))
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
         return null;

@@ -25,7 +25,7 @@ import java.io.IOException;
 public class Basics extends JavaPlugin {
 
     public static final String PREFIX = ChatColor.GREEN + "[BASICS]"; //  PREFIX Constant contains prefix for messages
-    public static String version; // Version Constaint contains current version release
+    public static String version; // Version Constant contains current version release
     private static Basics plugin; // Private plugin instance (Class Effect Only)
 
     /**

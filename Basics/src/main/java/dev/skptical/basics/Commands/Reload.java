@@ -31,18 +31,12 @@ public class Reload implements TabExecutor, CommandExecutor {
 
 
 
-        // TODO:REMOVE
-        Util.registerCommand("nv", instance, this, this);
+
     }
 
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
-        if(s.equalsIgnoreCase("nv")){
-            if(commandSender instanceof Player){
-                ((Player)commandSender).addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 1000000000, 1, true, false));
-            }
 
-        }
 
         if(s.equalsIgnoreCase("basics")){
             if(strings.length == 0){

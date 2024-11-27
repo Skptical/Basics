@@ -3,7 +3,6 @@ version: '${project.version}'
 main: dev.skptical.basics.Basics
 api-version: 1.19
 loadbefore:
-  - SMP
 load: STARTUP
 softdepend: [ Vault, PlaceholderAPI ]
 authors: [ Skptical ]
@@ -87,9 +86,6 @@ permissions:
 
 
 commands:
-
-  nv:
-    description: remember to remove this command and code
 
   basics:
     description: Allows the user to reload the plugin.
