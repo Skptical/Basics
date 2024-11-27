@@ -1,5 +1,7 @@
 package dev.skptical.basics;
 
+import dev.skptical.basics.Commands.CommandSpy;
+import dev.skptical.basics.Commands.Message;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -71,7 +73,10 @@ public class PlayerLogger {
         set(p,"hunger", p.getFoodLevel());
         // Nick Data
         set(p,"nick", p.getDisplayName());
-
+        // Cmd Spy
+        set(p, "commandSpyEnabled", CommandSpy.toggledCmdPlayers.contains(p));
+        // Social Spy
+        set(p, "socialSpyEnabled", Message.socialSpy.contains(p));
         // Save data
         Basics.instance().files.saveData();
 
@@ -82,6 +87,7 @@ public class PlayerLogger {
     }
 
     public static void playerJoin(Player p){
+        updatePlayer(p);
         // If their name is in the data file
         if(nameExists(p)){
             // If their name is in the data file & their nickname doesnt match the one stored

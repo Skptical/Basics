@@ -19,6 +19,7 @@ permissions:
       - basics.commandspy
       - basics.whois
       - basics.msg
+      - basics.socialspy
 
   basics.whois:
     description: Allows the player to use the /whois command to see other player information.
@@ -82,6 +83,10 @@ permissions:
 
   basics.msg:
     description: Allows the player to use /msg.
+
+  basics.socialspy:
+    description: Allows the player to use /socialspy
+
 
 
 
@@ -163,3 +168,8 @@ commands:
     usage: /r [message]
     aliases:
       - reply
+  socialspy:
+    description: Allows the player to see other players private messages.
+    usage: /socialspy <toggle>
+    aliases:
+      - messagespy

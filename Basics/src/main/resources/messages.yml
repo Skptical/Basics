@@ -45,3 +45,7 @@ social-spy-message: '&6(Social Spy) &e%player% --> %target%: &e%message%'
 no-reply: '&cYou have no online player to reply to.'
 # Message shown when toggling replies
 toggle-reply: '&r%toggled% &ereplying.'
+# The message shown when toggling social spy on
+social-spy-toggle-on: '&eYou''ve toggled social spy &aon.'
+# The message shown when toggling social spy off
+social-spy-toggle-off: '&eYou''ve toggled social spy &coff.'

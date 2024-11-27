@@ -17,7 +17,7 @@ public class Config {
     public static String smiteMessage, smiteOtherMessage, commandSpy;
     public static String whoisMessage, whoIsNotFoundMessage, toggledReply;
 
-    public static String permissionAlert, commandSpyToggleOff, commandSpyToggleOn;
+    public static String permissionAlert, commandSpyToggleOff, commandSpyToggleOn, socialSpyToggleOn, socialSpyToggleOff;
 
     public static boolean alertOnNoPermission, commandSpyShowOwn;
     public static boolean staffAlerts;
@@ -80,6 +80,8 @@ public class Config {
         messageSent = getM("message-sent");
         pmDisabledOtherMessage = getM("pm-disabled-other");
         socialSpyMessage = getM("social-spy-message");
+        socialSpyToggleOff = getM("social-spy-toggle-off");
+        socialSpyToggleOn = getM("social-spy-toggle-on");
     }
 
 

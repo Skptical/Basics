@@ -64,7 +64,7 @@ public class Message implements CommandExecutor, TabExecutor {
                                     p.sendMessage(Config.noReply);
                                 }
                             }else{
-                                p.sendMessage(Config.noReply);;
+                                p.sendMessage(Config.noReply);
                             }
 
                             return true;
@@ -98,7 +98,7 @@ public class Message implements CommandExecutor, TabExecutor {
                                     p.sendMessage(Config.noReply);
                                 }
                             }else{
-                                p.sendMessage(Config.noReply);;
+                                p.sendMessage(Config.noReply);
                             }
 
                         }
@@ -177,5 +177,7 @@ public class Message implements CommandExecutor, TabExecutor {
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
         return null;
+
+        //todo: tab complete
     }
 }
