@@ -28,7 +28,11 @@ public class ChatListener implements Listener {
                         return;
                     }
                     for(Player player : Message.socialSpy){
-                        player.sendMessage(); //TODO: SOCIAL SPY
+                        if(!player.getUniqueId().equals(p.getUniqueId())){
+                            player.sendMessage(Config.socialSpyMessage.replaceAll("%player%",p.getName()).replaceAll("%target%", target.getName())
+                                    .replaceAll("%message%", message));
+                        }
+
                     }
 
 
